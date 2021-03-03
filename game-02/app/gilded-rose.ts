@@ -20,7 +20,7 @@ export class GildedRose {
     }
 
     updateQuality() {
-        this.items.forEach((item, index, array) => {
+        this.items.forEach((item) => {
                 if (item.name == 'Sulfuras, Hand of Ragnaros')
                     item.quality = 80
                 else if (item.name == 'Aged Brie')
@@ -38,7 +38,7 @@ export class GildedRose {
                 else if (item.sellIn < 0)
                     this.decreaseQuality(item, 2)
                 else
-                    item.quality >= this.MIN_QUALITY && item.quality <= this.MAX_QUALITY ? this.decreaseQuality(item, 1) : this.setException("Quality value exception");
+                    item.quality >= this.MIN_QUALITY && item.quality <= this.MAX_QUALITY ? this.decreaseQuality(item, 1) : false;
             }
         );
         return this.items;
@@ -56,8 +56,4 @@ export class GildedRose {
         item.quality = value;
     }
 
-    setException(text) {
-
-        throw new Error(text)
-    }
 }
