@@ -21,7 +21,7 @@ public:
         }
     }
 
-    auto resolve() {
+    auto solve() {
         vector<int> response;
         for (int i = 0; i < N; i++) {
             for (int y = 0; y < N; y++) {
@@ -41,7 +41,7 @@ int main() {
     cout << "Enter a value for N" << endl;
     cin >> nvalue;
 
-    auto response = (new Game(nvalue))->resolve();
+    auto response = (new Game(nvalue))->solve();
     cout << "Los valores que suman " << nvalue
          << " son :[" << response[0] << "," << response[1] << "]" << endl;
     return true;
